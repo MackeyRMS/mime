@@ -2,6 +2,7 @@
 **.hi
 **.o
 **.swp
+*~
 /.cabal-sandbox
 *.swp
 cabal.sandbox.config
