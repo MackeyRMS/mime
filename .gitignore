@@ -6,3 +6,5 @@
 *.swp
 cabal.sandbox.config
 **tags
+/stack.yaml
+.stack-work/
