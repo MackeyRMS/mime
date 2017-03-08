@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 --------------------------------------------------------------------
 -- |
--- Module    : Codec.MIME.Pare
+-- Module    : Codec.MIME.Parse
 -- Copyright : (c) 2006-2009, Galois, Inc. 
 -- License   : BSD3
 --
@@ -139,12 +139,12 @@ parseMultipart mty body =
       ", has no required boundary parameter. Defaulting to text/plain") $
       (nullMIMEValue{ mime_val_type = defaultType
                     , mime_val_disp = Nothing
-		    , mime_val_content = Single body
-		    }, "")
+      , mime_val_content = Single body
+        }, "")
     Just bnd -> (nullMIMEValue { mime_val_type = mty
                                , mime_val_disp = Nothing
-			       , mime_val_content = Multi vals
-			       }, rs)
+             , mime_val_content = Multi vals
+             }, rs)
       where (vals,rs) = splitMulti bnd body
 
 splitMulti :: T.Text -> T.Text -> ([MIMEValue], T.Text)
