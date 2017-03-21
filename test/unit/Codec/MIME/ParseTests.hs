@@ -65,4 +65,3 @@ runParseEmail''' m =
       mv1:mv2:_ = mvs
       msg1@(MMT.Single cont2) = MMT.mime_val_content mv2
   in Just cont2
-
